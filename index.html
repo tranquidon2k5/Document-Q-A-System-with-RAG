@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trợ lý Sổ tay Sinh viên</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fas fa-robot"></i>
+            <h1>Trợ lý Sổ tay Sinh viên Bách khoa</h1>
+            <button id="scholarship-button" title="Xem học bổng">
+                <i class="fas fa-graduation-cap"></i>
+            </button>
+
+            <button id="jobs-button" title="Xem việc làm">
+                <i class="fas fa-briefcase"></i>
+            </button>
+
+            <button id="activity-button" title="Xem hoạt động">
+                <i class="fas fa-calendar-check"></i>
+            </button>
+        </header>
+
+        <main class="chat-box">
+            <div id="messages">
+                <!-- Initial bot message -->
+                <div class="message bot-message">
+                    <p>Chào bạn, tôi là trợ lý ảo. Hãy hỏi tôi về Sổ tay Sinh viên hoặc chọn một câu hỏi gợi ý bên dưới nhé!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- FAQ Section -->
+        <div class="faq-container">
+            <div id="faq-list" class="faq-list">
+                <!-- FAQ items will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <!-- BỘ CHỌN GIỌNG NÓI MỚI -->
+                <div class="voice-selector-wrapper" title="Chọn giọng đọc">
+                    <i class="fas fa-microphone-alt"></i>
+                    <select id="voice-selector">
+                        <option value="1">Giọng nữ miền Bắc</option>
+                        <option value="2">Giọng nam miền Bắc</option>
+                        <option value="3">Giọng nữ miền Nam</option>
+                        <option value="4">Giọng nam miền Nam</option>
+                    </select>
+                </div>
+                <input type="text" id="user-input" placeholder="Gõ câu hỏi của bạn tại đây...">
+                <button id="send-button" title="Gửi câu hỏi"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Marked.js for Markdown to HTML conversion -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+    <div id="scholarship-modal" class="modal hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Danh sách Học bổng</h2>
+                <button id="close-modal-button" title="Đóng"><i class="fas fa-times"></i></button>
+            </header>
+            <main class="modal-body">
+                <div id="scholarship-list-container">
+                    </div>
+                <div id="scholarship-detail-container" class="hidden">
+                    </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="jobs-modal" class="modal hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="jobs-modal-title">Việc làm & Thực tập</h2>
+                <button id="close-jobs-modal-button" title="Đóng"><i class="fas fa-times"></i></button>
+            </header>
+            <main class="modal-body">
+                <div id="job-list-view"> 
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <label>Loại tin:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="job-type-new" name="job-type" value="new" checked>
+                                <label for="job-type-new">Việc làm mới</label>
+                                <input type="radio" id="job-type-hot" name="job-type" value="hot">
+                                <label for="job-type-hot">Việc làm hot</label>
+                                <input type="radio" id="job-type-internship" name="job-type" value="internship">
+                                <label for="job-type-internship">Thực tập</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label for="career-filter">Chuyên ngành:</label>
+                            <select id="career-filter">
+                                <option value="">Tất cả chuyên ngành</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="city-filter">Địa điểm:</label>
+                            <select id="city-filter">
+                                <option value="">Tất cả địa điểm</option>
+                            </select>
+                        </div>
+                        <div class="filter-group-button">
+                            <button id="filter-jobs-button"><i class="fas fa-search"></i> Tìm kiếm</button>
+                        </div>
+                    </div>
+
+                    <div id="job-list-container">
+                        </div>
+                </div>
+
+                <div id="job-detail-container" class="hidden">
+                    </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="activity-modal" class="modal hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="activity-modal-title">Hoạt động & Sự kiện</h2>
+                <button id="close-activity-modal-button" title="Đóng"><i class="fas fa-times"></i></button>
+            </header>
+            <main class="modal-body">
+                <div id="activity-list-container">
+                    </div>
+                <div id="activity-detail-container" class="hidden">
+                    </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
