@@ -1,6 +1,6 @@
-# HUST AI Assistant - QA System with RAG
+# QA System with RAG
 
-Hệ thống trợ lý ảo thông minh hỗ trợ sinh viên HUST tra cứu thông tin về học bổng, việc làm, hoạt động ngoại khóa thông qua công nghệ RAG (Retrieval Augmented Generation).
+Hệ thống trợ lý ảo thông minh hỗ trợ sinh viên tra cứu thông tin về học bổng, việc làm, hoạt động ngoại khóa thông qua công nghệ RAG (Retrieval Augmented Generation).
 
 ## 🚀 Tính năng chính
 - **Chat thông minh**: Trả lời câu hỏi dựa trên tài liệu thực tế của HUST.
@@ -41,5 +41,3 @@ Sau đó mở `index.html` trực tiếp trong trình duyệt để sử dụng 
 - `index.html`, `script.js`, `style.css`: Giao diện người dùng.
 - `dockerfile`: Cấu hình Docker.
 
-## 📝 Giấy phép
-Dự án được phát triển phục vụ mục đích học tập.
